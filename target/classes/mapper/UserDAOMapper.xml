@@ -1,0 +1,39 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jx.dao.UserDAO">
+
+    <insert id="add" parameterType="user">
+        <![CDATA[
+        insert into t_user (name,password,real_name,sex) VALUES (#{name},#{password},#{realName},#{sex})
+        ]]>
+    </insert>
+
+    <select id="login" resultType="user" parameterType="string">
+        select * from t_user where name=#{name} and password=#{password}
+    </select>
+
+
+    <resultMap type="role" id="roleMap">
+        <id property="id" column="u_id"/>
+        <result property="name" column="u_name"/>
+        <result property="password " column="u_password"/>
+        <result property="realName" column="u_realName"/>
+        <result property="sex" column="u_sex"/>
+        <!-- 一对多的关系 -->
+        <!-- property: 指的是集合属性的值, ofType：指的是集合中元素的类型 -->
+        <collection property="role" javaType="list" ofType="com.jx.bean.Role">
+            <id property="id" column="r_id"/>
+            <result property="name" column="r_name"/>
+        </collection>
+    </resultMap>
+
+    <select id="getUserRole" parameterType="int" resultMap="roleMap">
+        select u.id as u_id,u.name as u_name,
+         u.password as u_password,u.realName as u_realName
+         u.sex as u_sex,r.id as r_id,r.name as r_name,
+         from t_user u,t_role r,where
+          u.role_id = r.id and u.id = #{id}
+    </select>
+</mapper>

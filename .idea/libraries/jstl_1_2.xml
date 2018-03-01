@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="jstl-1.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/standard-1.1.2.jar!/" />
+      <root url="file://D:/学习软件/apache-tomcat-8.5.11" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://D:/学习软件/apache-tomcat-8.5.11/webapps/docs/appdev/sample/src" />
+      <root url="file://D:/学习软件/apache-tomcat-8.5.11/webapps/examples/WEB-INF/classes" />
+      <root url="file://D:/学习软件/apache-tomcat-8.5.11/webapps/examples/WEB-INF/jsp/applet" />
+      <root url="file://D:/学习软件/apache-tomcat-8.5.11/webapps/examples/jsp/plugin/applet" />
+      <root url="file://D:/学习软件/apache-tomcat-8.5.11/work/Catalina/localhost/ROOT" />
+    </SOURCES>
+  </library>
+</component>
